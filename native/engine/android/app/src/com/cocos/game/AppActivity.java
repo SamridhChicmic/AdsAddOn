@@ -189,4 +189,7 @@ public class AppActivity extends CocosActivity {
     public static void setCCPA(boolean isEnabled) {
         Yodo1Ads.setCCPA(isEnabled);
     }
+    public static void onPassArgument(int num1,int num2){
+        Log.d("COCOSPASS", "onPassArgument: "+num1+num2);
+    }
 }

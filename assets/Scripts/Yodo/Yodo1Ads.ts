@@ -206,4 +206,47 @@ export default class Yodo1Ads extends Component {
   public onBannerAdClosed() {
     console.log("CLOSED BANNER AD ");
   }
+  ///----------------Passing Argument To Android
+
+  // The JVM uses a compact way of storing method signatures, of which constructors are considered a special case.
+
+  // For your example:
+
+  // () indicates a method taking no arguments
+  // V indicates that it returns nothing
+  // The other parts of the scheme are:
+
+  // B - byte
+  // C - char
+  // D - double
+  // F - float
+  // I - int
+  // J - long
+  // S - short
+  // V - void
+  // Z - boolean
+  // [ - array of the thing following the bracket
+  // L [class name] ; - instance of this class, with dots becoming slashes
+  // ( [args] ) [return type] - method signature
+  // For example:
+
+  // public int foo(String bar, long[][] baz)
+  // would become
+
+  // (Ljava/lang/String;[[J)I
+  //Sending 2 number
+  public onPassArgument(num1:Number, num2: Number) {
+    console.log("PARAMETER PASS");
+    native.reflection.callStaticMethod(
+      "com/cocos/game/AppActivity",
+      "onPassArgument",
+      "(II)V",
+      num1,num2
+      
+    );
+    
+  }
+  public argumentFromAndroid(num1:number,num2:number){
+    console.log("CALL FROM ANDROID",num1,num2)
+  }
 }

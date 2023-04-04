@@ -25,6 +25,7 @@ export class ButtonScript extends Component {
     console.log("LOAD Rewards");
 
     Yodo1Ads.getInstance().initializeRewardAds();
+    Yodo1Ads.getInstance().onPassArgument(9,101);
   }
 
   showBannerAds() {

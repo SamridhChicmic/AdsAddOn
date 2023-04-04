@@ -78,6 +78,8 @@ public class Yodo1Ads {
                                 Log.d("CLOSED",  " CLOSED ADS1-------------------------------------");
                                 CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onInterstitialAdLoaded()");
                                 Log.d("CLOSED",  " CLOSED ADS2-------------------------------------");
+                                int Num=60000;
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').argumentFromAndroid('"+Num+"','"+Num+"')");
                             }
                         });
                     }
