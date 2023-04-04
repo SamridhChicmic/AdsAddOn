@@ -29,6 +29,8 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.util.Log;
 
+import com.cocos.lib.CocosHelper;
+import com.cocos.lib.CocosJavascriptJavaBridge;
 import com.cocos.service.SDKWrapper;
 import com.cocos.lib.CocosActivity;
 
@@ -128,7 +130,14 @@ public class AppActivity extends CocosActivity {
     {
         Log.d("INITIALIZE---ADS",appKey);
         Yodo1Ads.initializeSdk(activity, appKey,isEnabled);
-
+//        CocosHelper.runOnGameThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Log.d("CLOSED",  " CLOSED ADS1-------------------------------------");
+//                CocosJavascriptJavaBridge.evalString("cc.find('Yodo1').getComponent('Yodo1Ads').onRewardAdEarned()");
+//                Log.d("CLOSED",  " CLOSED ADS2-------------------------------------");
+//            }
+//        });
     }
 
     public static void loadBannerAds(String size,String horizontal,String Vertical){

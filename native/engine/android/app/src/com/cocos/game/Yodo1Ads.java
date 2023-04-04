@@ -6,12 +6,14 @@ package com.cocos.game;
 
 import android.content.Context;
 import android.os.Debug;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
+
 
 import com.cocos.lib.CocosHelper;
 import com.yodo1.mas.Yodo1Mas;
@@ -72,7 +74,10 @@ public class Yodo1Ads {
                     public void onInterstitialAdLoaded(Yodo1MasInterstitialAd ad) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdLoaded()");
+                             //   CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdLoaded()");
+                                Log.d("CLOSED",  " CLOSED ADS1-------------------------------------");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onInterstitialAdLoaded()");
+                                Log.d("CLOSED",  " CLOSED ADS2-------------------------------------");
                             }
                         });
                     }
@@ -81,7 +86,10 @@ public class Yodo1Ads {
                     public void onInterstitialAdFailedToLoad(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdFailedToLoad()");
+                              //  CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdFailedToLoad()");
+                                Log.d("CLOSED",  " CLOSED ADS1-------------------------------------");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onInterstitialAdFailedToLoad()");
+                                Log.d("CLOSED",  " CLOSED ADS2-------------------------------------");
                             }
                         });
                     }
@@ -90,7 +98,10 @@ public class Yodo1Ads {
                     public void onInterstitialAdOpened(Yodo1MasInterstitialAd ad) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdOpened()");
+                               // CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdOpened()");
+                                Log.d("CLOSED",  " CLOSED ADS1-------------------------------------");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onInterstitialAdOpened()");
+                                Log.d("CLOSED",  " CLOSED ADS2-------------------------------------");
                             }
                         });
                     }
@@ -100,7 +111,10 @@ public class Yodo1Ads {
                         ad.loadAd(activity);
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdFailedToOpen()");
+                              //  CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdFailedToOpen()");
+                                Log.d("CLOSED",  " CLOSED ADS1-------------------------------------");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onInterstitialAdFailedToOpen()");
+                                Log.d("CLOSED",  " CLOSED ADS2-------------------------------------");
                             }
                         });
                     }
@@ -108,11 +122,23 @@ public class Yodo1Ads {
                     @Override
                     public void onInterstitialAdClosed(Yodo1MasInterstitialAd ad) {
                         ad.loadAd(activity);
+
                         CocosHelper.runOnGameThread(new Runnable() {
+                            @Override
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdClosed()");
+                                Log.d("CLOSED",  " CLOSED ADS1-------------------------------------");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onInterstitialAdClosed()");
+                                Log.d("CLOSED",  " CLOSED ADS2-------------------------------------");
                             }
                         });
+//                        CocosHelper.runOnGameThread(new Runnable() {
+//                            public void run() {
+//                                Log.d("CLOSED",  " CLOSED ADS-------------------------------------");
+////                                CocosJavascriptJavaBridge.evalString("find(\"Yodo1\").getComponent(\"Yodo1Ads\").onInterstitialAdClosed()");
+//                                CocosJavascriptJavaBridge.evalString("cc.director()");
+//                                int l=CocosJavascriptJavaBridge.evalString("this");
+//                            }
+//                        });
                     }
                 });
             }
@@ -141,7 +167,7 @@ public class Yodo1Ads {
                     public void onRewardAdLoaded(Yodo1MasRewardAd ad) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onRewardAdLoaded()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onRewardAdLoaded()");
                             }
                         });
                     }
@@ -150,7 +176,7 @@ public class Yodo1Ads {
                     public void onRewardAdFailedToLoad(Yodo1MasRewardAd ad, @NonNull Yodo1MasError error) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onRewardAdFailedToLoad()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onRewardAdFailedToLoad()");
                             }
                         });
                     }
@@ -159,7 +185,7 @@ public class Yodo1Ads {
                     public void onRewardAdOpened(Yodo1MasRewardAd ad) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onRewardAdOpened()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onRewardAdOpened()");
                             }
                         });
 
@@ -170,7 +196,7 @@ public class Yodo1Ads {
                         ad.loadAd(activity);
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onRewardAdFailedToOpen()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onRewardAdFailedToOpen()");
                             }
                         });
                     }
@@ -180,7 +206,7 @@ public class Yodo1Ads {
                         ad.loadAd(activity);
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onRewardAdClosed()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onRewardAdClosed()");
                             }
                         });
                     }
@@ -190,7 +216,7 @@ public class Yodo1Ads {
 
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onRewardAdEarned()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onRewardAdEarned()");
                             }
                         });
 
@@ -251,7 +277,7 @@ public class Yodo1Ads {
                     @Override public void onBannerAdLoaded(Yodo1MasBannerAdView bannerAdView) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onBannerAdLoaded()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onBannerAdLoaded()");
                             }
                         });
                     }
@@ -259,14 +285,14 @@ public class Yodo1Ads {
                     public void onBannerAdFailedToLoad(Yodo1MasBannerAdView bannerAdView, @NonNull Yodo1MasError error) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onBannerAdFailedToLoad()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onBannerAdFailedToLoad()");
                             }
                         });
                     }
                     @Override public void onBannerAdOpened(Yodo1MasBannerAdView bannerAdView) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onBannerAdOpened()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onBannerAdOpened()");
                             }
                         });
                     }
@@ -274,7 +300,7 @@ public class Yodo1Ads {
                     public void onBannerAdFailedToOpen(Yodo1MasBannerAdView bannerAdView, @NonNull Yodo1MasError error) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onBannerAdFailedToOpen()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onBannerAdFailedToOpen()");
                             }
                         });
                     }
@@ -282,7 +308,7 @@ public class Yodo1Ads {
                     public void onBannerAdClosed(Yodo1MasBannerAdView bannerAdView) {
                         CocosHelper.runOnGameThread(new Runnable() {
                             public void run() {
-                                CocosJavascriptJavaBridge.evalString("cc.find(\"Yodo1\").getComponent(\"Yodo1Ads\").onBannerAdClosed()");
+                                CocosJavascriptJavaBridge.evalString("cc.find('Canvas/OnScreen').getComponent('Yodo1Ads').onBannerAdClosed()");
                             }
                         });
                     }

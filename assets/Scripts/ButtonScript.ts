@@ -1,10 +1,12 @@
-import { _decorator, Component, Node } from "cc";
+import { _decorator, Component, find, Node, UITransform, view } from "cc";
 import Yodo1Ads from "./Yodo/Yodo1Ads";
 const { ccclass, property } = _decorator;
 
 @ccclass("ButtonScript")
 export class ButtonScript extends Component {
   start() {
+    console.log(find("Yodo1"));
+    view.getVisibleSize();
     Yodo1Ads.getInstance().initializeMasSdk("05OwESMwAR", true);
 
     //Yodo1Ads.getInstance().setCOPPA(false);
@@ -21,6 +23,7 @@ export class ButtonScript extends Component {
     Yodo1Ads.getInstance().initializeInterstitialAds();
 
     console.log("LOAD Rewards");
+
     Yodo1Ads.getInstance().initializeRewardAds();
   }
 
@@ -28,7 +31,7 @@ export class ButtonScript extends Component {
     // console.log("Show Banner Ads");
     // Yodo1Ads.getInstance().showBannerAds();
     console.log("LOAD BANNER and show");
-    Yodo1Ads.getInstance().loadBannerAds("Banner", "RIGHT", "TOP");
+    Yodo1Ads.getInstance().loadBannerAds("Banner", "LEFT", "BOTTOM");
   }
   showInterstitialAds() {
     console.log("Show Interstitial Ads");
@@ -38,5 +41,6 @@ export class ButtonScript extends Component {
     console.log("Show Rewards Ads");
     Yodo1Ads.getInstance().showRewardAds();
   }
+
   update(deltaTime: number) {}
 }

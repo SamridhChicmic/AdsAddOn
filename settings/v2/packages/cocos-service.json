@@ -1,14 +1,18 @@
 {
   "__version__": "3.0.6",
   "game": {
-    "name": "UNKNOW GAME",
-    "app_id": "UNKNOW",
-    "c_id": "0"
+    "app_id": "602389398",
+    "c_id": "0",
+    "name": "Normal"
   },
   "appConfigMaps": [
     {
       "app_id": "UNKNOW",
       "config_id": "719bb7"
+    },
+    {
+      "app_id": "602389398",
+      "config_id": "c8cad7"
     }
   ],
   "configs": [
@@ -20,6 +24,39 @@
       "services": [
         {
           "service_id": "278",
+          "enable": false,
+          "param": {}
+        },
+        {
+          "service_id": "316",
+          "enable": false,
+          "param": {}
+        }
+      ]
+    },
+    {
+      "app_id": "602389398",
+      "config_id": "c8cad7",
+      "config_name": "Default",
+      "config_remarks": "",
+      "services": [
+        {
+          "service_id": "316",
+          "enable": false,
+          "param": {}
+        },
+        {
+          "service_id": "302",
+          "enable": false,
+          "param": {}
+        },
+        {
+          "service_id": "278",
+          "enable": false,
+          "param": {}
+        },
+        {
+          "service_id": "315",
           "enable": false,
           "param": {}
         }
