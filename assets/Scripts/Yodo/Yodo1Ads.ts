@@ -149,6 +149,10 @@ export default class Yodo1Ads extends Component {
 
   public onInterstitialAdOpened() {
     console.log("OPEN INTERSTITIAL AD ");
+
+    console.log("OPEN INTERSTITIAL AD ", this.node.name);
+
+   // console.log("OPEN INTERSTITIAL AD ", JSON.stringify(this.node));
   }
 
   public onInterstitialAdFailedToOpen() {
@@ -235,18 +239,17 @@ export default class Yodo1Ads extends Component {
 
   // (Ljava/lang/String;[[J)I
   //Sending 2 number
-  public onPassArgument(num1:Number, num2: Number) {
+  public onPassArgument(num1: Number, num2: Number) {
     console.log("PARAMETER PASS");
     native.reflection.callStaticMethod(
       "com/cocos/game/AppActivity",
       "onPassArgument",
       "(II)V",
-      num1,num2
-      
+      num1,
+      num2
     );
-    
   }
-  public argumentFromAndroid(num1:number,num2:number){
-    console.log("CALL FROM ANDROID",num1,num2)
+  public argumentFromAndroid(num1: number, num2: number) {
+    console.log("CALL FROM ANDROID", num1, num2);
   }
 }
